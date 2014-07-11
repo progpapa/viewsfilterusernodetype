@@ -1,0 +1,33 @@
+<?php
+/**
+ * @file
+ * Main file for the viewsfilterusernodetype module.
+ */
+
+/**
+ * Implements hook_menu().
+ */
+function viewsfilterusernodetype_menu() {
+  $items = array();
+
+  $items['viewsfilterusernodetype/autocomplete/user'] = array(
+    'page callback' => 'viewsfilterusernodetype_autocomplete_user',
+    'theme callback' => 'ajax_base_page_theme',
+    'access callback' => 'user_access',
+    'access arguments' => array('access user profiles'),
+    'type' => MENU_CALLBACK,
+    'file' => 'includes/viewsfilterusernodetype.inc',
+  );
+
+  return $items;
+}
+
+/**
+ * Implements hook_views_api().
+ */
+function viewsfilterusernodetype_views_api() {
+  return array(
+    'api' => 3,
+    'path' => drupal_get_path('module', 'viewsfilterusernodetype'),
+  );
+}

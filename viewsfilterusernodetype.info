@@ -1,0 +1,7 @@
+name = Views Filter User Node Type
+description = Views handler to filter users only if they are the author of selected node types.
+package = Views
+core = 7.x
+
+files[] = handlers/viewsfilterusernodetype_handler_filter.inc
+dependencies[] = views

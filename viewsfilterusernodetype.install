@@ -1,0 +1,22 @@
+<?php
+
+/**
+ * @file
+ * Install, update, and uninstall functions for the viewsfilterusernodetype module.
+ */
+
+/**
+ * Implements hook_install().
+ */
+function viewsfilterusernodetype_install() {
+  // This separator is used to concatenate node type machine names in the url
+  // to the viewsfilterusernodetype_autocomplete_user AJAX callback function.
+  variable_set('viewsfilterusernodetype_separator', '-');
+}
+
+/**
+ * Implements hook_uninstall().
+ */
+function viewsfilterusernodetype_uninstall() {
+  variable_del('viewsfilterusernodetype');
+}
